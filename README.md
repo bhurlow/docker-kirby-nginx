@@ -1,6 +1,6 @@
 
 
-This is a docker image for running [kirby](getkirby.com) cms apps
+This is a docker image for running [kirby](http://getkirby.com) cms apps
 
 to use:
 
