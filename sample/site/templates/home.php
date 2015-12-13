@@ -1,4 +1,6 @@
 <?php snippet('header') ?>
+  
+<h1><?php echo $_SERVER["HTTP_HOST"] ?></h1>
 
   <main class="main" role="main">
 
