@@ -5,14 +5,12 @@ RUN apt-get install -y nginx
 RUN apt-get install -y php5-fpm
 ADD nginx.conf /etc/nginx/nginx.conf
 ADD www.conf /etc/php5/fpm/pool.d/www.conf
-ADD php.ini /etc/php5/fpm/php.ini
 
-ADD sample /app
 WORKDIR /app
 EXPOSE 80
 
 CMD /usr/sbin/php5-fpm \
-  --daemonize \ 
+  --daemonize \
   --fpm-config /etc/php5/fpm/php-fpm.conf \ 
   --allow-to-run-as-root && nginx -g 'daemon off;'
 
