@@ -3,6 +3,7 @@ USER root
 RUN apt-get update
 RUN apt-get install -y nginx
 RUN apt-get install -y php5-fpm
+RUN apt-get install -y imagemagick
 ADD nginx.conf /etc/nginx/nginx.conf
 ADD www.conf /etc/php5/fpm/pool.d/www.conf
 
