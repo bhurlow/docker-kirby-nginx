@@ -11,17 +11,20 @@ docker pull bhurlow/docker-kirby-nginx
 ```
 
 ### run it:
-```
-docker run -i -t -p 3000:80 -v $PWD:/app bhurlow/docker-kirby-nginx
-```
 
-note, you'll have to update your site url for css assets to load properly:
-
-in site.php:
+In config.php make sure you add:
 
 ```
-<?php
-$kirby = kirby();
-$kirby->urls->index = 'http://docker:3000';
+c::set('url',getenv('BASE_URL'));
 ```
 
+Then do
+
+```
+docker run \
+  -i -t \
+  -p 3000:80 \
+  -v $PWD:/app \
+  --env BASE_URL="http://docker:3000" \
+  bhurlow/docker-kirby-nginx
+```
